@@ -1,0 +1,361 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* =====================
+ここから下がheaderの中のCSS
+======================== */
+
+/* ヘッダーを固定するスタイル */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    /* 他のスタイルプロパティも追加可能 */
+    z-index: 999;
+  }
+ 
+
+.header-left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#c5b3d3
+}
+
+.logo{
+    height: 70px;
+}
+
+.nav{
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+    justify-content: flex-end;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+    
+}
+
+
+.nav > li {
+    text-decoration: none;
+    color: #c5b3d3;
+    font-size: 18px;
+    padding: 14px 20px;
+    /* height: 70px; */
+    
+}
+
+
+
+/*==================================================
+共通　横並びのための設定
+===================================*/
+
+.nav{
+    display: flex;
+    flex-wrap: wrap;/*スマホ表示折り返し用なのでPCのみなら不要*/
+    margin:0;
+    list-style: none;
+}
+
+.nav li a{
+    display: block;
+    padding:10px 30px;
+    text-decoration: none;
+    color: #c5b3d3;
+}
+
+.nav li{
+    margin-bottom:10px;
+}
+
+
+/*==================================================
+　5-3-1 中心から外に線が伸びる（下部）
+===================================*/
+
+.nav li a{
+    /*線の基点とするためrelativeを指定*/
+	position: relative;
+}
+
+.nav li.current a,
+.nav li a:hover{
+	color:#c5b3d3;
+}
+
+.nav li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    /*線の形状*/
+    width: 80%;
+    height: 2px;
+    background:#c5b3d3;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: center top;/*上部中央基点*/
+}
+
+/*現在地とhoverの設定*/
+.nav li.current a::after,
+.nav li a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    color: #c5b3d3;
+}
+.about{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #c5b3d3;
+    color: white;
+}
+.organization{
+    background-color: #c5b3d3;
+    color: white;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.organization > h2{
+    background: linear-gradient(transparent 70%, #fec7d7 70%);
+}
+.organization1{
+    height: 50vh;
+    width: auto;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.schedule{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 60px;
+    padding-bottom: 100px;
+    background-color: #c5b3d3;
+    color: white;
+}
+
+
+.shedule_pt{
+    background-color: #c5b3d3;
+    height: 50vh;
+    width: auto;
+}
+
+.shedule_left{
+  height: 50vh;
+  width: 40vw;
+  margin-left: 50px;
+  margin-top: 50px; 
+  margin-bottom: 50px;   
+}
+
+.nenkanschedule >h2{
+  background: linear-gradient(transparent 70%, #fec7d7 70%);
+}
+
+
+.organization2{
+  width: auto;
+  height: 50vh;
+}
+
+ /* 以前のスタイル */
+
+    /* ヘッダーを固定するスタイル */
+    .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #fff;
+        /* 他のスタイルプロパティも追加可能 */
+        z-index: 1;
+      }
+  
+      /* 通常のページコンテンツとヘッダーの重なりを避けるためのスタイル */
+      body {
+        margin-top: 50px;
+      }
+.sns{
+        display: flex;
+        justify-content: flex-end;
+        background-color: white;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+.twitter{
+        font-size: 2.5em;
+        
+    }
+.twitter2{
+        font-size: 2.5em; 
+        padding-left: 15px;
+    }
+.instagram{
+        font-size: 2.5em;
+        padding-left: 15px;
+        padding-right: 15px;
+
+    }
+.youtube{
+        font-size: 2.5em;
+        padding-right: 15px;
+    }
+.rights{
+        background-color: #c5b3d3;
+        color: white;
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+/* topリンク */
+/*リンクの形状*/
+#page-top a{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	background:white;
+	border-radius: 5px;
+	width: 60px;
+	height: 60px;
+	color: #c5b3d3;
+	text-align: center;
+	text-transform: uppercase; 
+	text-decoration: none;
+	font-size:0.6rem;
+	transition:all 0.3s;
+}
+
+#page-top a:hover{
+	background: #fec7d7;
+    color: #0e172c;
+}
+/*リンクを右下に固定*/
+#page-top {
+	position: fixed;
+	right: 10px;
+	bottom:10px;
+	z-index: 2;
+    /*はじめは非表示*/
+	opacity: 0;
+	transform: translateX(100px);
+}
+
+.header3 {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  /* .logo {
+    font-weight: 700;
+    padding-left: 14px;
+  } */
+  .hamburger-menu {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: none;
+    background: transparent;
+    appearance: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .hamburger-menu__bar {
+    display: inline-block;
+    width: 44%;
+    height: 2px;
+    background: #c5b3d3;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .5s;
+  }
+  .hamburger-menu__bar:first-child {
+    top: 16px;
+  }
+  .hamburger-menu__bar:nth-child(2) {
+    top: 24px;
+  }
+  .hamburger-menu__bar:last-child {
+    top: 32px;
+  }
+  .hamburger-menu--open .hamburger-menu__bar {
+    top: 50%;
+  }
+  .hamburger-menu--open .hamburger-menu__bar:first-child {
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  }
+  .hamburger-menu--open .hamburger-menu__bar:last-child {
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  }
+  .hamburger-menu--open .hamburger-menu__bar:nth-child(2) {
+    display: none;
+  }
+  .navigation {
+    display: none;
+    background: white;
+    position: absolute;
+    top: 50px;
+    width: 30%;
+    z-index: 9999;
+    right: 0;
+  }
+  .navigation__list {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .navigation__list-item {
+    border-bottom: solid 1px white;
+  }
+  .navigation__list-item:first-child {
+    border-top: solid 1px white;
+  }
+  .navigation__link {
+    color: #c5b3d3;
+    font-weight: 700;
+    text-decoration: none;
+    display: block;
+    padding: 24px 0;
+    transition: .5s;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .navigation__link:hover {
+      background: #333;
+    }
+  }
+
+.header3{
+    display: none;
+}
+@media screen and (max-width:780px) {
+    .header3{
+        display: block;
+    }
+  }
